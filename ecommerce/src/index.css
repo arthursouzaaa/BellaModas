@@ -4,6 +4,7 @@
   margin: 0;
 }
 
+/* Definição da tabela de cores da identidade visual */
 :root{
   --primary-color: #FFF176;    
   --secondary-color: #424242;  
@@ -57,7 +58,7 @@ nav {
   width: 100%;
 }
 
-/* LOGO MELHORADO */
+/* Estilização da logo à esquerda */
 .logo {
   color: var(--primary-color);
   font-size: 2.2rem;
@@ -68,6 +69,7 @@ nav {
   position: relative;
 }
 
+/* Esse span foi usado porque queria ter cores diferentes no nome */
 .logo span {
   color: var(--dark-secondary-color);
   font-weight: 300;
@@ -84,7 +86,7 @@ nav {
   border-radius: 2px;
 }
 
-/* MENU MELHORADO */
+/* Estilização do menu de opções do usuário */
 .nav ul {
   display: flex;
   list-style: none;
@@ -131,7 +133,7 @@ nav {
   font-weight: 600;
 }
 
-/* PESQUISA MELHORADA */
+/* Estilização geral entre todos os componentes dentro do container de pesquisa */
 .search-input-container {
   display: flex;
   align-items: center;
@@ -178,7 +180,7 @@ nav {
   color: var(--primary-color);
 }
 
-/* CARRINHO MELHORADO */
+/* Estilização do carrinho de compras */
 .navs-icon-container {
   display: flex;
   align-items: center;
@@ -224,7 +226,7 @@ nav {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* MENU BUTTON */
+/* Estilização do botão do menu */
 .menu-button {
   display: none;
   padding: 0.5rem;
@@ -236,7 +238,7 @@ nav {
   background: var(--light-color);
 }
 
-/* RESPONSIVIDADE BÁSICA */
+/* Responsividade básica usando Media queries */
 @media (max-width: 768px) {
   .nav ul {
     gap: 1.5rem;
