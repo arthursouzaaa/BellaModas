@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Conjunto Coração",
+      "image": "/images/produtos/Conjunto-Coração.jpg",
+      "rating": 4,
+      "price": 149.99
+    },
+    {
+      "id": 2,
+      "name": "Conjunto Dafne",
+      "image": "/images/produtos/Conjunto-Dafne.jpg",
+      "rating": 5,
+      "price": 149.99
+    },
+    {
+      "id": 3,
+      "name": "Conjunto Laço Brilho",
+      "image": "/images/produtos/Conjunto-Laço-Brilho.jpg",
+      "rating": 5,
+      "price": 149.99
+    },
+    {
+      "id": 4,
+      "name": "Macacão Thalia",
+      "image": "/images/produtos/Macacão-Thalia.jpg",
+      "rating": 3,
+      "price": 159.99
+    },
+    {
+      "id": 5,
+      "name": "Macaquito Inês",
+      "image": "/images/produtos/Macaquito-Inês.jpg",
+      "rating": 5,
+      "price": 149.99
+    },
+    {
+      "id": 6,
+      "name": "Vestido Agatha",
+      "image": "/images/produtos/Vestido-Agatha.jpg",
+      "rating": 5,
+      "price": 149.99
+    },
+    {
+      "id": 7,
+      "name": "Vestido Carol",
+      "image": "/images/produtos/Vestido-Carol.jpg",
+      "rating": 4,
+      "price": 139.99
+    },
+    {
+      "id": 8,
+      "name": "Vestido Ingrid",
+      "image": "/images/produtos/Vestido-Ingrid.jpg",
+      "rating": 4,
+      "price": 159.99
+    },
+    {
+      "id": 9,
+      "name": "Vestido Polyane",
+      "image": "/images/produtos/Vestido-Polyane.jpg",
+      "rating": 5,
+      "price": 149.99
+    },
+    {
+      "id": 10,
+      "name": "Vestido Princesa",
+      "image": "/images/produtos/Vestido-Princesa.jpg",
+      "rating": 5,
+      "price": 99.99
+    },
+    {
+      "id": 11,
+      "name": "Vestido Tâmara",
+      "image": "/images/produtos/Vestido-Tâmara.jpg",
+      "rating": 5,
+      "price": 169.99
+    },
+    {
+      "id": 12,
+      "name": "Vestido Thárcia",
+      "image": "/images/produtos/Vestido-Thárcia.jpg",
+      "rating": 5,
+      "price": 159.99
+    }
+  ]
+}

@@ -1,52 +1,40 @@
-import { faBars, faSearch, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import ListaProdutos from "./components/ListaProdutos";
+import { useEffect } from "react";
+import { useState } from "react";
+import ExclusiveSection from "./components/ExclusiveSection";
+import Avaliacoes from "./components/Avaliacoes";
 
 function App() {
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+  fetch('/db.json')
+    .then(res => res.json())
+    .then((data) => setProdutos(data.products)); 
+    }, [])
+
   return (
   <Router>
     <div className="App">
-    <div className="nav">
-      <div className="inner-content">
-        <nav>
-        <h1 className="logo">
-        BELLA<span>MODAS</span>
-      </h1>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/produtos">Produtos</Link>
-          </li>
-          <li>
-            <Link to="/sobre">Sobre</Link>
-          </li>
-          <li>
-            <Link to="/contato">Contato</Link>
-          </li>
-          <li>
-            <Link to="/conta">Conta</Link>
-          </li>
-        </ul>
-        <div className="navs-icon-container">
-        <div className="search-input-container">
-          <input type="search" placeholder="Procurar peça" />
-          <FontAwesomeIcon icon={faSearch} />
+      <Navbar />
+      <main>
+        <Header />
+        <div className="page-inner-content"></div>
+        <div className="section-title">
+          <h3>Produtos Selecionados</h3>
+          <div className="underline"></div>
         </div>
-        <button className="shopping-cart">
-          <FontAwesomeIcon icon={faShoppingCart} />
-          <div className="products-count">15</div>
-        </button>
-        <button className="menu-button">
-          <FontAwesomeIcon icon={faBars} />
-        </button>
-      </div>
-      </nav>
-      </div>
+
+        <div className="main-content">
+          <ListaProdutos produtos={produtos}/>
+        </div>
+      </main>
+      <ExclusiveSection />
+      <Avaliacoes />
     </div>
-  </div>
   </Router>
   );
 }
