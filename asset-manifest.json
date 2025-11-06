@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/BellaModas/static/css/main.d8b15f10.css",
+    "main.js": "/BellaModas/static/js/main.c3d1f900.js",
+    "index.html": "/BellaModas/index.html",
+    "main.d8b15f10.css.map": "/BellaModas/static/css/main.d8b15f10.css.map",
+    "main.c3d1f900.js.map": "/BellaModas/static/js/main.c3d1f900.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8b15f10.css",
+    "static/js/main.c3d1f900.js"
+  ]
+}
