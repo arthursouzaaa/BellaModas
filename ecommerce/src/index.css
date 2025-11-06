@@ -448,8 +448,6 @@ header .canto-direito img {
   }
 }
 
-/* ========== EXCLUSIVE SECTION ========== */
-
 /* ========== EXCLUSIVE SECTION OTIMIZADA ========== */
 .exclusive-section {
   background-color: var(--dark-primary-color);
@@ -499,7 +497,6 @@ header .canto-direito img {
 }
 
 /* Responsividade da Exclusive Section */
-
 @media (max-width: 1024px) {
   .exclusive-section .page-inner-content { 
     gap: 2rem; 
@@ -546,7 +543,6 @@ header .canto-direito img {
 }
 
 /* Estilização da seção de avaliações */
-
 .avaliacoes-section {
   padding: 4rem 2rem;
   background-color: var(--light-color);
@@ -631,7 +627,7 @@ header .canto-direito img {
   font-family: serif;
 }
 
- /* RESPONSIVIDADE da seção de avaliações */
+/* RESPONSIVIDADE da seção de avaliações */
 @media (max-width: 1024px) {
   .avaliacao {
     min-width: 280px;
