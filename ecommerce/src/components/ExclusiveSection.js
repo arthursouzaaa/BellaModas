@@ -20,7 +20,6 @@ export default function ExclusiveSection() {
           </div>
         </div>
 
-        {/* Lado Direito - Imagem */}
         <div className='right-side'>
           <img src='/images/assets/FotoModelo2.png' alt='Conjunto Body Manga Longa + Saia Crepe'/> 
         </div>

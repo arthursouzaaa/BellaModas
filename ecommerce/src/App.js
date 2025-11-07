@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ExclusiveSection from "./components/ExclusiveSection";
 import Avaliacoes from "./components/Avaliacoes";
+import Footer from "./components/Footer";
 
 function App() {
   const [produtos, setProdutos] = useState([]);
@@ -34,6 +35,7 @@ function App() {
       </main>
       <ExclusiveSection />
       <Avaliacoes />
+      <Footer />
     </div>
   </Router>
   );
