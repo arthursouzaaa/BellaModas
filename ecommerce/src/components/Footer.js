@@ -63,7 +63,9 @@ export default function Footer() {
           <h4>Contato</h4>
           <div className="contact-info">
             <div className="contact-item">
-              <FontAwesomeIcon icon={faMapMarkerAlt} />
+              <Link to="https://www.google.com/maps/@-8.043977,-34.9473817,3a,75y,108.73h,105.14t/data=!3m7!1e1!3m5!1sg5N2rPVO5qIfIAPTuP_R0w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-15.144514659158602%26panoid%3Dg5N2rPVO5qIfIAPTuP_R0w%26yaw%3D108.72542989356052!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D"> 
+                <FontAwesomeIcon icon={faMapMarkerAlt} />
+              </Link>
               <span>Av. General Polidorio, 777 - CDU</span>
             </div>
             <div className="contact-item">

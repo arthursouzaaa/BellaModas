@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
 import Produto from './Produto';
 
-export default function ListaProdutos({ produtos }) {
+export default function ListaProdutos({ produtos, onAdicionarAoCarrinho }) {
   return (
     <div className="listaprodutos">
-      {produtos && produtos.map((produto) => (
-        <Produto key={produto.id} {...produto} />
+      {produtos.map((produto) => (
+        <Produto 
+          key={produto.id} 
+          produto={produto}
+          onAdicionarAoCarrinho={onAdicionarAoCarrinho}
+        />
       ))}
     </div>
   );

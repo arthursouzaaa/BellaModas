@@ -1,27 +1,38 @@
-import React from 'react'
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faEye } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-export default function Produto({id, image, name, rate, price}) {
+export default function Produto({ produto, onAdicionarAoCarrinho }) {
+  const handleAdicionarCarrinho = () => {
+    onAdicionarAoCarrinho(produto);
+  };
+
+  const renderEstrelas = (rating) => {
+    return '⭐'.repeat(rating) + '☆'.repeat(5 - rating);
+  };
+
   return (
     <div className="product">
-      <img src={image} alt={name} />
-      <p className="name">{name}</p>
-      <p className="rate">⭐⭐⭐⭐⭐</p>
-      <p className="price">R$ {price}</p>
-
+      <img src={produto.image} alt={produto.name} />
+      <h3 className="name">{produto.name}</h3>
+      <p className="price">R$ {produto.price.toFixed(2)}</p>
+      <div className="rate">{renderEstrelas(produto.rating)}</div>
+      
       <div className="botoes">
-        <Link to="/produtos/123/checkout">
-        <span>Comprar Agora</span>
-        <FontAwesomeIcon icon={faMoneyBill} />
+        <Link to={`/produto/${produto.id}`} className="view-btn">
+          <FontAwesomeIcon icon={faEye} />
+          Ver Detalhes
         </Link>
-        <button className="btn-icon add-to-card-btn">
-          <span>Adicionar ao Carrinho</span>
-        <FontAwesomeIcon icon={faCartShopping} />
+        
+        <button 
+          className="add-to-card-btn"
+          onClick={handleAdicionarCarrinho}
+        >
+          <FontAwesomeIcon icon={faShoppingCart} />
+          Adicionar
         </button>
       </div>
     </div>
-  )
+  );
 }
