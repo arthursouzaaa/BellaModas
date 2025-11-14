@@ -14,8 +14,14 @@ export default function Produto({ produto, onAdicionarAoCarrinho }) {
 
   return (
     <div className="product">
-      <img src={produto.image} alt={produto.name} />
-      <h3 className="name">{produto.name}</h3>
+      <Link to={`/produto/${produto.id}`}>
+        <img src={produto.image} alt={produto.name} />
+      </Link>
+      
+      <Link to={`/produto/${produto.id}`} className="product-link">
+        <h3 className="name">{produto.name}</h3>
+      </Link>
+      
       <p className="price">R$ {produto.price.toFixed(2)}</p>
       <div className="rate">{renderEstrelas(produto.rating)}</div>
       

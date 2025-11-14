@@ -25,7 +25,7 @@ export default function Navbar({ onAbrirCarrinho, totalItensCarrinho }) {
             <Link to="/sobre" onClick={() => setShow(false)}>Sobre</Link>
           </li>
           <li>
-            <Link to="/contato" onClick={() => setShow(false)}>Contato</Link>
+            <Link to="https://wa.me/5581997272147" onClick={() => setShow(false)}>Contato</Link>
           </li>
         </ul>
 
