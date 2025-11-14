@@ -58,7 +58,7 @@ Inicie o servidor.
 
 Consegui superar minhas expectativas no desenvolvimento do projeto, visto às variáveis pendentes na minha vida, e espero conseguir aprender mais sobre Front-end e Frameworks.
 
-## 🧱 Melhorias
+## ✅ Melhorias
 
 Completar as outras funcionalidades e integrar esse projeto com um bom back-end e mais coisas!
 
