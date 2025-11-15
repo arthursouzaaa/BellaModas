@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import React from 'react';
 import ProdutosLado from "./ProdutosLado";
 import { Link } from 'react-router-dom';
@@ -71,7 +71,6 @@ export default function CarrinhoLado({ isOpen, onClose, carrinho, onAtualizarCar
 
             <Link className="icon-btn" to="/cart/checkout" onClick={onClose}>
               <span className="btn-primary">💳 Pagar agora</span>
-              <FontAwesomeIcon icon={faMoneyBill} /> 
             </Link>
           </>
         )}

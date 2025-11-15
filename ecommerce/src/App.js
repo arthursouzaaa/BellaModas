@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from './context/ThemeContext'; 
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import ListaProdutos from "./components/ListaProdutos";
@@ -54,62 +55,68 @@ function App() {
   }, [])
 
   return (
-    <Router>
-      <div className="App">
-        <Navbar 
-          onAbrirCarrinho={() => setCarrinhoAberto(true)} 
-          totalItensCarrinho={totalItensCarrinho}
-        />
-        
-        <Routes>
-          <Route path="/" element={
-            <main>
-              <Header />
-              <CarrinhoLado 
-                isOpen={carrinhoAberto} 
-                onClose={() => setCarrinhoAberto(false)}
+    <ThemeProvider> 
+      <Router>
+        <div className="App">
+          <Navbar 
+            onAbrirCarrinho={() => setCarrinhoAberto(true)} 
+            totalItensCarrinho={totalItensCarrinho}
+          />
+          
+          <Routes>
+            <Route path="/" element={
+              <main>
+                <Header />
+                <CarrinhoLado 
+                  isOpen={carrinhoAberto} 
+                  onClose={() => setCarrinhoAberto(false)}
+                  carrinho={carrinho}
+                  onAtualizarCarrinho={atualizarCarrinho}
+                />
+                <div className="page-inner-content">
+                  <div className="section-title">
+                    <h3>Produtos Selecionados</h3>
+                    <div className="underline"></div>
+                  </div>
+                  <div className="main-content">
+                    <ListaProdutos 
+                      produtos={produtos} 
+                      onAdicionarAoCarrinho={adicionarAoCarrinho}
+                    />
+                  </div>
+                </div>
+              </main>
+            } />
+            
+            <Route path="/produtos" element={
+              <Produtos 
                 carrinho={carrinho}
+                carrinhoAberto={carrinhoAberto}
+                onAbrirCarrinho={() => setCarrinhoAberto(true)}
+                onFecharCarrinho={() => setCarrinhoAberto(false)}
+                onAdicionarAoCarrinho={adicionarAoCarrinho}
                 onAtualizarCarrinho={atualizarCarrinho}
               />
-              <div className="page-inner-content">
-                <div className="section-title">
-                  <h3>Produtos Selecionados</h3>
-                  <div className="underline"></div>
-                </div>
-                <div className="main-content">
-                  <ListaProdutos 
-                    produtos={produtos} 
-                    onAdicionarAoCarrinho={adicionarAoCarrinho}
-                  />
-                </div>
-              </div>
-            </main>
-          } />
-          
-          <Route path="/produtos" element={
-            <Produtos 
-              carrinho={carrinho}
-              carrinhoAberto={carrinhoAberto}
-              onAbrirCarrinho={() => setCarrinhoAberto(true)}
-              onFecharCarrinho={() => setCarrinhoAberto(false)}
-              onAdicionarAoCarrinho={adicionarAoCarrinho}
-              onAtualizarCarrinho={atualizarCarrinho}
-            />
-          } />
-          
-          <Route path="/produto/:id" element={
-            <ProdutoDetalhes 
-              carrinho={carrinho}
-              onAdicionarAoCarrinho={adicionarAoCarrinho}
-            />
-          } />
-        </Routes>
+            } />
+            
+            <Route path="/produto/:id" element={
+              <ProdutoDetalhes 
+                carrinho={carrinho}
+                onAdicionarAoCarrinho={adicionarAoCarrinho}
+                carrinhoAberto={carrinhoAberto}           
+                onAbrirCarrinho={() => setCarrinhoAberto(true)} 
+                onFecharCarrinho={() => setCarrinhoAberto(false)} 
+                onAtualizarCarrinho={atualizarCarrinho}   
+              />
+              } />
+          </Routes>
 
-        <ExclusiveSection />
-        <Avaliacoes />
-        <Footer />
-      </div>
-    </Router>
+          <ExclusiveSection />
+          <Avaliacoes />
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

@@ -77,7 +77,9 @@ export default function Footer() {
               <span>bellamodas@gmail.com</span>
             </div>
             <div className="contact-item">
-              <FontAwesomeIcon icon={faWhatsapp} />
+              <Link to="https://wa.me/5581997272147"> 
+                <FontAwesomeIcon icon={faWhatsapp} />
+              </Link>
               <span>(81) 99727-2147</span>
             </div>
           </div>

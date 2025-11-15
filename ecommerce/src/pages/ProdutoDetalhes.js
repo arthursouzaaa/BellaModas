@@ -2,8 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faHeart, faStar, faArrowLeft, faShare } from '@fortawesome/free-solid-svg-icons';
+import CarrinhoLado from '../components/CarrinhoLado';
 
-export default function ProdutoDetalhes({ carrinho, onAdicionarAoCarrinho }) {
+  export default function ProdutoDetalhes({ 
+    carrinho, 
+    onAdicionarAoCarrinho,
+    carrinhoAberto,        
+    onAbrirCarrinho,         
+    onFecharCarrinho,      
+    onAtualizarCarrinho    
+  }) {
   const { id } = useParams();
   const [produto, setProduto] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -30,6 +38,7 @@ export default function ProdutoDetalhes({ carrinho, onAdicionarAoCarrinho }) {
     for (let i = 0; i < quantidade; i++) {
       onAdicionarAoCarrinho(produto);
     }
+    onAbrirCarrinho(); 
   };
 
   const renderEstrelas = (rating) => {
@@ -61,7 +70,6 @@ export default function ProdutoDetalhes({ carrinho, onAdicionarAoCarrinho }) {
   return (
     <div className="pagina-produto-detalhes">
       <div className="page-inner-content">
-        {/* Navegação */}
         <nav className="breadcrumb">
           <Link to="/">Home</Link>
           <span> / </span>
@@ -70,7 +78,13 @@ export default function ProdutoDetalhes({ carrinho, onAdicionarAoCarrinho }) {
           <span>{produto.name}</span>
         </nav>
 
-        {/* Produto Principal */}
+        <CarrinhoLado 
+          isOpen={carrinhoAberto} 
+          onClose={onFecharCarrinho}
+          carrinho={carrinho}
+          onAtualizarCarrinho={onAtualizarCarrinho}
+        />
+
         <div className="produto-detalhes-container">
           <div className="produto-galeria">
             <div className="imagem-principal">

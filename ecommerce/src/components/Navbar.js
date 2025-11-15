@@ -1,11 +1,13 @@
 import React from 'react';
-import { faBars, faSearch, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSearch, faShoppingCart, faUser, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar({ onAbrirCarrinho, totalItensCarrinho }) {
   const [show, setShow] = useState(false);
+  const { isDarkMode, toggleTheme } = useTheme();
 
   return (
     <div className="nav">
@@ -25,7 +27,7 @@ export default function Navbar({ onAbrirCarrinho, totalItensCarrinho }) {
             <Link to="/sobre" onClick={() => setShow(false)}>Sobre</Link>
           </li>
           <li>
-            <Link to="https://wa.me/5581997272147" onClick={() => setShow(false)}>Contato</Link>
+            <Link to="/contato" onClick={() => setShow(false)}>Contato</Link>
           </li>
         </ul>
 
@@ -34,6 +36,10 @@ export default function Navbar({ onAbrirCarrinho, totalItensCarrinho }) {
             <input type="search" placeholder="Procurar peça" />
             <FontAwesomeIcon icon={faSearch} />
           </div>
+          
+          <button className="theme-toggle" onClick={toggleTheme}>
+            <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
+          </button>
           
           <Link to="/conta" className="user-icon">
             <FontAwesomeIcon icon={faUser} />
